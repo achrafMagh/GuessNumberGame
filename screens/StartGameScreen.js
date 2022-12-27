@@ -3,6 +3,7 @@ import { View, Text, TextInput, StyleSheet, Alert } from "react-native";
 import React from "react";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Colors from "../constants/colors";
+import Title from "../components/ui/Title";
 const StartGameScreen = ({onPickNumber}) => {
     const [enteredNumber, setEnteredNumber] = useState('');
 
@@ -34,7 +35,10 @@ const StartGameScreen = ({onPickNumber}) => {
         onPickNumber(chosenNumber);
     }
   return (
+    <View style={styles.container}>
+    <Title>Guess My Number</Title>
     <View style={styles.inputContainer}>
+        
       <TextInput
         style={styles.numberInput}
         maxLength={2}
@@ -53,13 +57,16 @@ const StartGameScreen = ({onPickNumber}) => {
         </View>
       </View>
     </View>
+    </View>
   );
 };
 const styles = StyleSheet.create({
+    container: {
+        padding: 52,
+      },
   inputContainer: {
     alignItems: "center",
     marginTop: 100,
-    marginHorizontal: 24,
     borderRadius: 8,
     padding: 16,
     backgroundColor: Colors.primary800,
