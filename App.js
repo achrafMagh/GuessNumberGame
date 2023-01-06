@@ -7,6 +7,7 @@ import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
 import Colors from "./constants/colors";
 import GameOverScreen from "./screens/GameOverScreen";
+import { StatusBar } from 'expo-status-bar';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -55,11 +56,14 @@ export default function App() {
   }
 
   return (
+    <>
+    <StatusBar style="light"/>
     <LinearGradient colors={[Colors.primary700, Colors.accent500]} style={styles.rootScreen} onLayout={onLayoutRootView}>
       <ImageBackground source={require('./assets/images/background.jpg')} style={styles.rootScreen} resizeMode='cover' imageStyle={styles.backgroundImage}>
           {screen}       
       </ImageBackground>
     </LinearGradient>
+    </>
   );
 }
 
