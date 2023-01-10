@@ -1,2 +1,2 @@
 # GuessNumberGame
-A game who allows user to guess a number using React Native Expo
+A game that allows user to guess a number using React Native Expo
